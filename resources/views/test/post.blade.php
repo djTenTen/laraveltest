@@ -8,6 +8,7 @@
                 <th>ID</th>
                 <th>Post</th>
                 <th>Category</th>
+                <th>Posted By:</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -17,6 +18,7 @@
                     <td> {{ $p->postID }} </td>
                     <td> {{ $p->post }} </td>
                     <td> {{ $p->category }} </td>
+                    <td> {{ $p->name }} </td>
                     <td>
                         <div class="btn-group">
                             <!-- Button to Open the Modal -->
@@ -31,7 +33,7 @@
 
                                 <!-- Modal Header -->
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Modal Heading</h4>
+                                    <h4 class="modal-title">Edit {{ $p->name }}'s Post?</h4>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                 </div>
 
@@ -80,7 +82,7 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    Are you realy sure to delete this post?
+                                    Are you realy sure to delete {{ $p->name }}'s this post?
                                 </div>
 
                                 <!-- Modal footer -->

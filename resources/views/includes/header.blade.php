@@ -26,7 +26,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/post/view">View Post</a>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();">
+                                        <button type="submit" class="btn">logout</button>
+        
+                                    </x-dropdown-link>
+                                </form>
+                            </li>
+            
+                        </ul>
+                    </li>
+
+
                 </ul>
+
+                
             </div>
         </nav>
 
